@@ -2,6 +2,8 @@ import React from 'react'
 import Actions from './components/Actions';
 import Header from './components/Header';
 import Logo from './components/Logo';
+import NotesArea from './components/NotesArea';
+import Notes from './components/Notes';
 function App() {
   return (
     <div className="App">
@@ -9,8 +11,9 @@ function App() {
         <Logo/>
         <Actions/>
       </Header>
-
-
+      <NotesArea>
+       <Notes/>
+      </NotesArea>
     </div>
   );
 }
