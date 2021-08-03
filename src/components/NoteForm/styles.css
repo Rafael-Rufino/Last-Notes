@@ -46,7 +46,7 @@
 .note-menu div textarea::-webkit-scrollbar-thumb{
   background: transparent;
 }
-.note-menu div textarea:hover-webkit-scrollbar-thumb{
+.note-menu div textarea:hover::-webkit-scrollbar-thumb{
   background: #888;
 }
 
@@ -66,9 +66,15 @@
   border: none;
 }
 
-.icon{
+.icon-cancelar, .icon-confirma{
   width: 25px;
   height: 25px;
   margin: 4px;
   
+}
+.icon-cancelar{
+  color: rgb(228, 47, 47);
+}
+.icon-confirma{
+  color: rgb(40, 218, 40);
 }

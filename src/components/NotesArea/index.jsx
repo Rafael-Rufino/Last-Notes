@@ -5,7 +5,7 @@ import "./styles.css";
 
 export default function NotesArea({children}){
   return(
-    <article className="notesArea">
+    <article className="notes-area">
       {children}
       <NoteForm/>  
     </article>

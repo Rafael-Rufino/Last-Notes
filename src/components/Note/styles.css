@@ -2,14 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 208px;
+  width: 280px;
   height: 280px;
   padding: 15px;
-
-
   text-align: center;
   background: var(--note-background);
 
+}
+
+.note.highlight{
+  border: 2px solid orange;
 }
 
 .note hr{
@@ -33,7 +35,7 @@
 .note .note-description {
   width: 100%;
   height: 100%;
-
+  background: white;
   overflow-x: hidden;
   overflow-y: scroll;
   text-overflow: ellipsis;
@@ -61,6 +63,6 @@
 }
 
 .note .note-description:hover::-webkit-scrollbar-thumb{
-  background: #888;
+  background: rgb(241, 169, 33);
 
 }

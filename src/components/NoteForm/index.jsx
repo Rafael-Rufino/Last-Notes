@@ -16,11 +16,11 @@ export default function NoteForm(){
 
       <div className="buttons">
         <button className="cancel">
-          <FaBan className="icon"/>
+          <FaBan className="icon-cancelar"/>
         </button>
 
         <button type= "submit" className="confirma">
-            <FaCheck className="icon"/>
+            <FaCheck className="icon-confirma"/>
         </button>
       </div>
   

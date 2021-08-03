@@ -1,4 +1,23 @@
-.notesArea{
+@media(max-width:720px) {
+  .notes-area{
+    flex-wrap: wrap-reverse;
+ 
+
+  }
+  .notes-area .note-menu{
+    flex:1;
+    min-width: 340px;
+    margin-bottom: 20px;
+  }
+  .notes-area .notes{
+    justify-content: center;
+    margin: 0;
+  }
+  .notes-area .notes .notes{
+    margin: 20px 0 0 20px
+  }
+}
+.notes-area{
   display: flex;
   justify-content: space-between;
 
