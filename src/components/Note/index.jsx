@@ -1,37 +1,25 @@
-import React,{useState} from 'react';
+import React from 'react';
 import "./styles.css";
+import {useHighlight} from '../../context/HighlightContext';
 
 
-export default function Note(){
-  const [highlight, setHighlight] = useState(false);
+export default function Note({id, title, description}){
+  const {highlight, setHighlight} =useHighlight();
 
   return (
-    <div className={`note ${highlight ? "highlight": ""}`}
-      onClick={() => {
-        setHighlight(!highlight)} 
+    <div 
+      id={id}
+          className={`note ${highlight ? "highlight": ""}`}
+          onClick={() => {
+          setHighlight(!highlight)} 
       }
     >
-      <h2 className="title">Titulo Exemplo teste</h2>
+      <h2 className="title">
+        {title}
+        </h2>
       <hr />
       <p className="note-description">
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
-        Descrição de exemplo
+        {description}
       </p>
     </div> 
   );
