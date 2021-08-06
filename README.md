@@ -1,2 +1,2 @@
 # Acessar
-### https://last-notes-6lugwj2rk-rafael-rufino.vercel.app/
+### https://last-notes-rafael-rufino.vercel.app/
