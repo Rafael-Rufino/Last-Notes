@@ -38,7 +38,7 @@
   background: white;
   overflow-x: hidden;
   overflow-y: scroll;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 .note .title::-webkit-scrollbar{

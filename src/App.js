@@ -5,10 +5,14 @@ import Logo from './components/Logo';
 import NotesArea from './components/NotesArea';
 import Notes from './components/Notes';
 
+//context
+import NoteFormProvider from './context/NoteFormContext';
 import NoteListProvider from "./context/NoteListContext";
 import HighlightProvider from "./context/HighlightContext";
+
 function App() {
   return (
+    <NoteFormProvider>
     <NoteListProvider>
       <HighlightProvider>
         <Header>
@@ -20,6 +24,7 @@ function App() {
         </NotesArea>
       </HighlightProvider>
     </NoteListProvider>
+    </NoteFormProvider>
       
   );
 }

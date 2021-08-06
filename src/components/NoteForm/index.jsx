@@ -1,36 +1,70 @@
-import React, {useState} from "react";
+import React, {useEffect} from "react";
 import { FaBan, FaCheck } from "react-icons/fa";
 import { useNoteList } from "../../context/NoteListContext";
 import "./styles.css";
+import { useNoteForm } from "../../context/NoteFormContext";
+import  {useHighlight} from "../../context/HighlightContext";
 
 export default function NoteForm() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  
   const {noteList, setNoteList} = useNoteList();
+  const  {
+    title,
+    setTitle,
+    description,
+    setDescription,
+    setVisibleForm
+  } = useNoteForm();
+  const {highlight, setHighlight} = useHighlight();
+
+  useEffect(() => {
+    saveLocalNotes();
+  }, [noteList]);
 
 
   function HandleTitle(e) {
     setTitle(e.target.value)
- 
-
   }
+
   function handleDescription(e){
     setDescription(e.target.value)
-
-
   }
 
   function handleSubmit(e){
    e.preventDefault();
-   setNoteList([
-     ...noteList,
-     {
-       id: String(Math.floor(Math.random() * 1000)),
-       title,
-       description,
-     },
-   ]);
-    
+     if(highlight){
+       noteList.map((note) =>{
+         if(note.id === highlight){
+           note.title = title;
+           note.description = description;
+         }
+       });
+       setNoteList([...noteList]);
+   }
+   else{
+    setNoteList([
+      ...noteList,
+      {
+        id: String(Math.floor(Math.random() * 1000)),
+        title,
+        description,
+      },
+    ]); 
+
+   }
+  }
+
+  function handleCancel(e){
+    e.preventDefault();
+    setHighlight(false);
+    setVisibleForm(false);
+
+
+  }
+
+  function saveLocalNotes(){
+    localStorage.setItem("notes", JSON.stringify(noteList));
+
   }
 
   return (
@@ -59,7 +93,7 @@ export default function NoteForm() {
       </div>
 
       <div className="buttons">
-        <button className="cancel">
+        <button className="cancel" onClick={handleCancel}>
           <FaBan className="icon-cancelar" />
         </button>
 
